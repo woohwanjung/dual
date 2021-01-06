@@ -1,4 +1,4 @@
-## Dual Supervision Framework for Relation Extraction with Distant Supervision and Human Annotation
+## Dual Supervision Framework for Relation Extraction with Distant Supervision and Human Annotation (COLING 20)
 
 
 ### Document-level relation extraction
@@ -12,4 +12,8 @@
 
 ### Sentence-level relation extraction
 
-+ Sorry, it will be uploaded until 2020/12/31
++ We modified the codes in the following repository for the experiment.
+  * https://github.com/INK-USC/shifted-label-distribution/
+   
++ ReadMe: Follow the instruction in "dual_sent/README.md"
+
