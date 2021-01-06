@@ -1,3 +1,44 @@
+This code is based on the source code from the following repository:
+https://github.com/INK-USC/shifted-label-distribution/
+
+### Environment Setup
+[Environment Setup](#environment-setup)
+
+### Download and Pre-processing
+
+Please check data download and pre-processing instructions in each data directory in `./data`. Also, check [this](data/neural/vocab/README.md) to download our processed word embeddings and word2id file.
+
+
+
+## Training and testing RNN-based and CNN-based models
+training:
+```
+python Neural/train.py  --model bgru  --data_dir data/neural/KBP  --optimizer SGD  --lr 1.0  --repeat 5  --dual True  --w_dist 0.001  --crossiter True  --info KBP_bgru_lr1.0_dual_wd0.001
+```
+
+testing:
+```
+python Neural/eva.py --repeat 5 --info KBP_bgru_lr1.0_dual_wd0.001
+```
+
+
+## Training and testing BERT-based models
+training:
+```
+python Neural/train_bert.py  --model sbert  --data_dir data/neural/KBP  --optimizer Adam  --lr 0.0001  --repeat 5  --hidden 128  --weight_decay 0.0001  --dual True  --w_dist 0.0001  --crossiter True  --info KBP_sbert_Adam_lr0.0001_w0.0001_dual_wd0.0001_ci  --num_epoch 5 
+```
+
+testing:
+```
+python Neural/eva_bert.py --repeat 5 --info KBP_sbert_Adam_lr0.0001_w0.0001_dual_wd0.0001_ci
+```
+
+
+
+
+-----------------------------------------------------------------------------------------------------------------------
+<h2>ReadMe from the original repository</h2>
+
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
 
@@ -10,8 +51,7 @@ __TL;DR__: We identify __shifted label distribution__, an important yet long-ove
 
 ## Table of Contents
 
-- [Introduction](#introduction)
-- [Example](#example)
+
 - [Training Recipes](#training-recipes)
     - [Environment Setup](#environment-setup)
     - [Download and Pre-processing](#download-and-pre-processing)
@@ -25,16 +65,7 @@ __TL;DR__: We identify __shifted label distribution__, an important yet long-ove
             - [Bi-GRU+ATT / PCNN+ATT](NeuralATT/README.md)
 - [Reference](#reference)
 
-## Introduction
 
-When we compare different sentence-level RE models, we observe __diminishing phenomenon__ in model performance (_i.e._, neural models outperform feature-based models by a lot on human-annoated dataset, but the gap diminishes on DS datasets.)
-In addtion, we find two __heuristic threshold__ techniques to be effective on DS datasets.
-These observation leads to __shifted label distribution__, an important yet long-overlooked issue in DSRE.
-We further introduce __bias adjustment__ to adapt a trained model along such shift explicitly.
-
-RE=Relation Extraction; DS=Distant Supervision.
-
-<p align="center"><img width="70%" src="overview.png"/></p>
 
 ## Codebase Overview
 
@@ -74,14 +105,6 @@ Please check data download and pre-processing instructions in each data director
 ### Running Instructions
 
 Click the model name to view the running instructions for each model.
-
-#### Feature-based Models
-
-Run `conda activate shifted` first to activate the environment for feature-based models.
-
-1. [ReHession](ReHession/README.md)
-2. [CoType](CoType/README.md)
-3. [Logistic Regression](LogisticRegression/README.md)
 
 #### Neural Models
 
