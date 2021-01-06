@@ -2,7 +2,8 @@ This code is based on the source code from the following repository:
 https://github.com/INK-USC/shifted-label-distribution/
 
 ### Environment Setup
-[Environment Setup](#environment-setup)
+[Setup](#environment-setup)
+
 
 ### Download and Pre-processing
 
