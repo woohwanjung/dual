@@ -1,12 +1,8 @@
 This code is based on the source code from the following repository:
 https://github.com/INK-USC/shifted-label-distribution/
 
-### Environment Setup
-[Setup](#environment-setup)
-
 
 ### Download and Pre-processing
-
 Please check data download and pre-processing instructions in each data directory in `./data`. Also, check [this](data/neural/vocab/README.md) to download our processed word embeddings and word2id file.
 
 
